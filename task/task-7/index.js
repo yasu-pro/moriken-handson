@@ -11,9 +11,18 @@ function task_1() {
 }
 
 const result = new Promise((resolve) => {
-  //task-6
+  //task-7
+  const divTag = document.getElementsByTagName("div")[0];
+  divTag.style.display = "none";
+  const bodyTag = document.getElementsByTagName("body")[0];
+  const createImg = document.createElement("img");
+  createImg.setAttribute("src", "./img/loading-circle.gif");
+  createImg.setAttribute("id", "loading-circle");
+  bodyTag.appendChild(createImg);
   setTimeout(() => {
     resolve(obj);
+    createImg.style.display = "none";
+    divTag.style.display = "block";
   }, 3000);
 });
 
